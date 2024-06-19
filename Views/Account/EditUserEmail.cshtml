@@ -1,0 +1,30 @@
+﻿@model UpdateUserEmailViewModel
+
+@{
+    ViewData["Title"] = "User Inforamtion";
+}
+
+<link href="~/css/signin.css" rel="stylesheet" />
+
+        <div class="main-form">
+            <form asp-action="GetUserInfo" asp-controller="Account" method="post" autocomplete="off">
+                <div class="danger" asp-validation-summary="ModelOnly"></div>
+                <label asp-for="UserName">Username:</label>
+                <input asp-for="UserName" class="email" type="text" placeholder="username..." />
+                <span class="danger" asp-validation-for="UserName"></span>
+
+                <label asp-for="Email">Email:</label>
+                <input asp-for="Email" id="email" class="email" type="email" placeholder="email..." />
+                <span class="danger" asp-validation-for="Email"></span>
+
+                <label asp-for="PhoneNumber">PhoneNumber:</label>
+                <input asp-for="PhoneNumber" class="email" placeholder="phone..." />
+                <span class="danger" asp-validation-for="PhoneNumber"></span>
+
+                <div>
+                    <button type="submit" title="save" class="btn">save</button>
+                </div>
+            </form>
+        </div>
+
+

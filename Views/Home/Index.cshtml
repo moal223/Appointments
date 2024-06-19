@@ -1,0 +1,73 @@
+﻿@model Appointment
+@{
+    ViewData["Title"] = "Home Page";
+    List< Appointment> data = (List<Appointment>)ViewData["models"];
+}
+
+<div class="main-container">
+    <!-- start appointments list -->
+    <div class="appointments-container">
+        <div class="tools">
+            <form asp-controller="Home" asp-action="Search">
+            <input name="key" type="text" placeholder="search for appointment" />
+            <button type="submit" title="search" id="add-appoint" class="btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            </form>
+        </div>
+        <div class="appointments">
+            @if (data.Count > 0) {
+                @foreach (var item in data)
+                {
+                    <div class="appointment">
+                        <input type="text" value="@item.Title" />
+                        <div class="buttons">
+                        <a asp-controller="Home" asp-action="Remove" asp-route-id="@item.Id" title="delete appointment" id="delete" class="btn">
+                            <i class="fa-solid fa-minus"></i>
+                        </a>
+                        <a asp-controller="Home" asp-action="Get" asp-route-id="@item.Id" title="show appointment" id="get" class="btn">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    <!-- end appointments list -->
+    <!-- start appointment details -->
+    <div id="details" class="details">
+        @if(Model == null){
+        <form asp-controller="Home" asp-action="AddAppointement" method="post">
+            <div asp-validation-summary="ModelOnly"></div>
+         <input asp-for="Title" class="input-title" type="text" placeholder="title..." />
+         <span class="danger" asp-validation-for="Title"></span>
+        <input asp-for="ExpiDate" class="input-time" type="datetime-local" />
+        <textarea
+          class="input-details"
+          asp-for="Details"
+          placeholder="appointment details..."
+        ></textarea>
+            <button title="save" id="save" class="btn" type="submit">
+                <i class="fa-solid fa-floppy-disk"></i>
+            </button>
+            </form>
+        }
+        else
+        {
+            <form asp-route-id="@Model.Id" asp-controller="Home" asp-action="Update" method="post">
+                <div asp-validation-summary="ModelOnly"></div>
+                <input asp-for="Title" class="input-title" type="text" placeholder="title..." />
+                <span class="danger" asp-validation-for="Title"></span>
+                <input asp-for="ExpiDate" class="input-time" type="datetime-local" />
+                <textarea class="input-details"
+                          asp-for="Details"
+                          placeholder="appointment details..."></textarea>
+                <button title="save" id="save" class="btn" type="submit">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                </button>
+            </form>
+        }
+    </div>
+    <!-- end appointment details -->
+</div>

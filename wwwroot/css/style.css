@@ -1,0 +1,179 @@
+:root {
+  --mainColor: #eee;
+  --mainBackGroundColor: rgb(0, 152, 199);
+}
+body {
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.btn {
+  padding: 6px 10px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+/* strat nav */
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--mainBackGroundColor);
+  color: var(--mainColor);
+  padding: 0px 25px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  width: 70%;
+  align-items: center;
+  margin: 0px;
+}
+nav ul li {
+  position: relative;
+  margin-left: 20px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+}
+nav ul li a {
+  color: var(--mainColor);
+  text-decoration: none;
+}
+/* end nav */
+/* start main */
+.main-container {
+  display: flex;
+  margin: 83px auto;
+  width: 900px;
+  justify-content: space-around;
+}
+.main-container .details {
+  width: 300px;
+  background-color: var(--mainColor);
+  padding: 10px;
+}
+.main-container .details .input-title,
+.main-container .details .input-time {
+  padding: 5px;
+  width: 95%;
+  margin-bottom: 10px;
+  outline: none;
+}
+.main-container .details .btn {
+  background-color: var(--mainBackGroundColor);
+  color: var(--mainColor);
+}
+.main-container .details h3 {
+  width: 100%;
+  text-align: center;
+}
+.main-container .details textarea {
+  width: 93%;
+  height: 100px;
+  padding: 10px;
+  outline: none;
+  margin-bottom: 20px;
+}
+.appointments-container {
+  width: 500px;
+  height: 300px;
+  background-color: var(--mainColor);
+  padding: 10px;
+  overflow-y: scroll;
+}
+.appointments-container .tools {
+  width: 100%;
+}
+.appointments-container .tools input {
+  padding: 5px 5px;
+  outline: none;
+  width: 250px;
+  font-size: 18px;
+  color: var(--mainBackGroundColor);
+}
+.appointments-container .tools .btn {
+  border-right: 0px;
+  border-bottom: 0px;
+  background-color: var(--mainBackGroundColor);
+  color: var(--mainColor);
+  font-size: 15px;
+  margin-left: 7px;
+}
+.appointments-container .appointments {
+  width: 99%;
+  margin-top: 30px;
+}
+.appointments-container .appointments .appointment {
+  margin-bottom: 10px;
+  background-color: var(--mainBackGroundColor);
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.appointments-container .appointments .appointment input {
+  padding: 5px 5px;
+  outline: none;
+  width: 250px;
+  font-size: 15px;
+  color: var(--mainBackGroundColor);
+}
+.appointments-container .appointments .appointment .btn {
+  border-right: 0px;
+  border-bottom: 0px;
+  background-color: rgb(255, 0, 8);
+  color: var(--mainColor);
+  font-size: 10px;
+  margin-right: 10px;
+}
+    .appointments-container .appointments .appointment #get {
+        background-color: #d3d300;
+    }
+    .hidden {
+        display: none;
+    }
+    /* end main */
+    /* start error */
+    .danger {
+        color: red;
+        font-size: 13px;
+    }
+/* end error*/
+#info{
+    position: relative;
+    cursor: pointer;
+    overflow:visible;
+}
+#user {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    background-color: white;
+    top: 70px;
+    width: 200px;
+    padding: 10px;
+    right: -88px;
+    transition: 0.3s;
+    overflow: hidden;
+}
+#user div{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: #eee;
+}
+#user div a {
+    width: 100%;
+    font-size: 15px;
+    padding: 5px;
+    color: var(--mainBackGroundColor);
+    text-align: center;
+}
+.hide-user {
+    height: 0 !important;
+    padding: 0 !important;
+}
+

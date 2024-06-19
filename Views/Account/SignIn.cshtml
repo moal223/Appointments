@@ -1,0 +1,50 @@
+﻿@model SignInViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/css/all.min.css" rel="stylesheet" />
+    <link href="~/css/signin.css" rel="stylesheet" />
+    <title>Signin</title>
+</head>
+<body>
+    <div class="container">
+        <div class="toggle">
+            <a asp-controller="Account" asp-action="Signin" class="marked">Signin</a>
+            <a asp-controller="Account" asp-action="Register" class="unmarked">Register</a>
+        </div>
+        <div class="main-form">
+            <form asp-action="SignIn" asp-controller="Account" method="post" autocomplete="off">
+                <div class="danger" asp-validation-summary="ModelOnly"></div>
+
+                <input asp-for="Email" id="email" class="email" type="email" placeholder="email..." />
+                <span class="danger" asp-validation-for="Email"></span>
+
+                <input
+                    asp-for="Password"
+                    id="password"
+                       class="password"
+                       type="password"
+                       placeholder="password..." />
+                <span class="danger" asp-validation-for="Password"></span>
+
+                <input asp-for="Remberme" type="checkbox" />
+                <label for="Remberme">Remberme</label>
+                <div>
+                <button type="submit" title="signin" class="btn">signin</button>
+                </div>
+                <div>
+                    Don't have account? <a asp-controller="Account" asp-action="Register">Register</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

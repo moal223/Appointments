@@ -1,0 +1,54 @@
+﻿@model UserRegisterViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/css/all.min.css" rel="stylesheet" />
+    <link href="~/css/signin.css" rel="stylesheet" />
+    <title>Register</title>
+</head>
+<body>
+    <div class="container">
+        <div class="toggle">
+            <a asp-controller="Account" asp-action="Signin" class="unmarked">Signin</a>
+            <a asp-controller="Account" asp-action="Register" class="marked">Register</a>
+        </div>
+        <div class="main-form">
+            <form asp-action="Register" asp-controller="Account" method="post" autocomplete="off">
+                <div class="danger" asp-validation-summary="ModelOnly"></div>
+
+                <input asp-for="Email" id="email" class="email" type="email" placeholder="email..." />
+                <span class="danger" asp-validation-for="Email"></span>
+
+                <input asp-for="PhoneNumber" id="PhoneNo" class="PhoneNo" type="text" placeholder="phone..." />
+                <span class="danger" asp-validation-for="PhoneNumber"></span>
+
+                <input
+                    asp-for="Password"
+                    id="password"
+                       class="password"
+                       type="password"
+                       placeholder="password..." />
+                <span class="danger" asp-validation-for="Password"></span>
+
+                <input
+                    asp-for="ConfirmPassword"
+                    id="password"
+                       class="password"
+                       type="password"
+                       placeholder="confirt password..." />
+                <span class="danger" asp-validation-for="ConfirmPassword"></span>
+                <button type="submit" title="register" class="btn">register</button>
+                <div>
+                    Already have an account? <a asp-controller="Account" asp-action="Signin">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
